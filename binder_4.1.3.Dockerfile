@@ -8,6 +8,10 @@ LABEL org.opencontainers.image.licenses="GPL-2.0-or-later" \
 
 ENV NB_USER=rstudio
 
+COPY install_pyenv.sh /rocker_scripts/
+
+RUN chmod +x /rocker_scripts/install_pyenv.sh
+
 RUN /rocker_scripts/install_python.sh
 RUN /rocker_scripts/install_binder.sh
 
